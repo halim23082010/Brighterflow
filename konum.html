@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcının Ülkesi</title>
+</head>
+<body>
+    <h2>Bulunduğunuz Ülke:</h2>
+    <p id="country">Yükleniyor...</p>
+
+    <script>
+        fetch('http://ip-api.com/json/')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('country').textContent = data.country;
+        })
+        .catch(error => {
+            document.getElementById('country').textContent = 'Ülke bilgisi alınamadı.';
+            console.error('Hata:', error);
+        });
+    </script>
+</body>
+</html>

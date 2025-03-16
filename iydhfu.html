@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث تفاعلي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #search-container {
+            position: relative;
+            width: 300px;
+        }
+        #search-box {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #search-results {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .result-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ابحث هنا:</h2>
+    <div id="search-container">
+        <input type="text" id="search-box" placeholder="ابحث هنا..." oninput="search()">
+        <div id="search-results"></div>
+    </div>
+
+    <script>
+        // بيانات JSON المبدئية
+        const data = [
+            { "name": " hello", "href": "https://www.google.com" },
+            { "name": "موقع يوتيوب", "href": "https://www.youtube.com" },
+            { "name": "موقع فيسبوك", "href": "https://www.facebook.com" },
+            { "name": "موقع تويتر", "href": "https://www.twitter.com" },
+            { "name": "موقع لينكدإن", "href": "https://www.linkedin.com" }
+        ];
+
+        function search() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // مسح النتائج السابقة
+
+            if (query.length === 0) {
+                return;
+            }
+
+            // تصفية البيانات بناءً على البحث
+            const filteredData = data.filter(item => item.name.toLowerCase().includes(query));
+
+            // عرض النتائج
+            filteredData.forEach(item => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                resultItem.textContent = item.name;
+                resultItem.onclick = () => {
+                    window.location.href = item.href; // توجيه المستخدم إلى الرابط عند النقر
+                };
+                resultsContainer.appendChild(resultItem);
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+

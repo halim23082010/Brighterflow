@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="logreg.css">
+    <title>Document</title>
+
+
+       <!-- Required meta tags -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+       <!-- Bootstrap CSS -->
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container" id="register">
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="register.php">
+            <div class="input-row">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="fname" name="fname" id="fname" placeholder="First Name" required>
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="lname" id="lname" name="lname" placeholder="Last Name" required>
+                    <label for="lname">Last Name</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" class="email" id="email" name="email" placeholder="email" required>
+                <label for="email">Email</label>
+                <p id="emailErrorMessage" class="error-message"></p>
+            </div>
+            
+            
+<div class="input-group">
+    <i class="fa-solid fa-calendar"></i>
+    <input type="date" class="date" id="date" name="date" placeholder="date " required>
+    <label for="birth">Birthday</label>
+</div>
+
+<div class="input-group" onchange="loadStates()">
+<select class="form-select country" aria-label="Select Country" name="country" onchange="loadStates()" required>
+    <option value="">Select Country</option>
+</select>
+</div>
+
+<div class="input-group" onchange="loadCities()">
+<select class="form-select state" aria-label="Select State" name="state" onchange="loadCities()" required>
+    <option value="">Select State</option>
+</select>
+</div>
+
+<div class="input-group">
+<select class="form-select city" name="city" aria-label="Select City" required>
+    <option value="">Select City</option>
+</select>
+</div>
+
+
+<div class="input-group">
+    <i class="fa-solid fa-calendar"></i>
+    <input type="text" class="adress" id="adress" name="adress" placeholder="adress">
+    <label for="adress">adress</label>
+</div>
+
+
+
+<div class="input-group">
+    <i class="fas fa-lock"></i>
+    <input type="password" class="password" id="password" name="password" placeholder="Password" required>
+    <label for="password">Password</label>
+</div>
+
+<div class="input-group">
+    <i class="fas fa-lock"></i>
+    <input type="password" class="password-repeat" id="password-repeat" name="password_repeat" placeholder="Repeat Password" required>
+    <label for="password-repeat">Repeat Password</label>
+    
+</div>
+
+
+
+<div class="forgot-password">
+    <p id="passwordErrorMessage" class="error-message"></p>
+    
+</div>
+
+<div class="terms-checkbox">
+    <input type="checkbox" id="termsCheck" name="termsCheck" required>
+    <label for="termsCheck">I agree to the <a href="#" onclick="openTerms()">Terms & Conditions</a></label>
+</div>
+
+
+
+
+
+<input type="submit" class="btn" value="Register" name="register">
+
+
+</form>
+
+
+<p class="or">
+    ------------or------------
+</p>
+    
+    <div class="links">
+        <p>Already have an account?</p>
+        <a href="login.html" id="signInButton">Sign In</a>
+    </div>
+
+
+    </div>
+
+    
+</body>
+<script src="logreg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Count</title>
+    <style>
+        .result-count {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sonuç sayısı -->
+<div class="result-count" id="result-count">
+    Toplam Sonuç: 0
+</div>
+
+<!-- Ürünler -->
+<div id="products-list">
+    <div class="product">Ürün 1</div>
+    <div class="product">Ürün 2</div>
+    <div class="product">Ürün 3</div>
+    <div class="product">Ürün 4</div>
+    <div class="product">Ürün 5</div>
+    <div class="product">Ürün 1</div>
+    <div class="product">Ürün 2</div>
+    <div class="product">Ürün 3</div>
+    <div class="product">Ürün 4</div>
+    <div class="product">Ürün 5</div>
+</div>
+
+<script>
+    // Ürünleri sayma fonksiyonu
+    function countProducts() {
+        const products = document.querySelectorAll('.product'); // .product sınıfına sahip tüm öğeleri seç
+        const resultCountElement = document.getElementById('result-count'); // Sonuç sayısının gösterileceği eleman
+        resultCountElement.textContent = `Toplam Sonuç: ${products.length}`; // Ürün sayısını yazdır
+    }
+
+    // Sayfa yüklendiğinde sayıyı güncelle
+    window.onload = countProducts;
+</script>
+
+</body>
+</html>
